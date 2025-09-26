@@ -1,10 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://dhvpniolrtyk5"]
+[gd_scene load_steps=8 format=3 uid="uid://dhvpniolrtyk5"]
 
 [ext_resource type="PackedScene" uid="uid://cg2evhcefxl12" path="res://scenes/background_level_1.tscn" id="1_5xbjy"]
 [ext_resource type="PackedScene" uid="uid://00cuijx1nyf1" path="res://scenes/pause_ui.tscn" id="2_bswci"]
 [ext_resource type="PackedScene" uid="uid://b8kifyk7hc6nl" path="res://scenes/character.tscn" id="3_rus8k"]
 [ext_resource type="PackedScene" uid="uid://s0tl2ed8u8co" path="res://scenes/wall.tscn" id="4_5xbjy"]
-[ext_resource type="PackedScene" uid="uid://x6q1ghj5wvk8" path="res://scenes/obstacle.tscn" id="5_4nkto"]
+[ext_resource type="Script" uid="uid://dos3stpgmg4re" path="res://scripts/game_manager.gd" id="5_fcfvj"]
+[ext_resource type="SystemFont" uid="uid://d28qwrr684wsa" path="res://assets/font/Pixel Font Thin.tres" id="6_pa8r4"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_15mv3"]
+font = ExtResource("6_pa8r4")
 
 [node name="Level1" type="MarginContainer"]
 anchors_preset = 15
@@ -13,15 +17,15 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
+
 [node name="BackgroundLevel1" parent="." instance=ExtResource("1_5xbjy")]
 repeat_size = Vector2(640, 0)
 autoscroll = Vector2(-100, 0)
 repeat_times = 99999
 
 [node name="PauseUI" parent="." instance=ExtResource("2_bswci")]
-
-[node name="Character" parent="." instance=ExtResource("3_rus8k")]
-position = Vector2(80, 184)
 
 [node name="Wall" parent="." instance=ExtResource("4_5xbjy")]
 position = Vector2(320, 344)
@@ -30,8 +34,32 @@ position = Vector2(320, 344)
 position = Vector2(320, 16)
 rotation = -3.1415927
 
-[node name="Camera2D" type="Camera2D" parent="."]
-anchor_mode = 0
+[node name="GameManager" type="Node" parent="."]
+unique_name_in_owner = true
+script = ExtResource("5_fcfvj")
 
-[node name="Obstacle" parent="." instance=ExtResource("5_4nkto")]
-position = Vector2(256, 56)
+[node name="ScoreLabel" type="Label" parent="GameManager"]
+texture_filter = 1
+offset_left = 208.0
+offset_right = 312.0
+offset_bottom = 24.0
+text = "Score: X"
+label_settings = SubResource("LabelSettings_15mv3")
+
+[node name="BestScoreLabel" type="Label" parent="GameManager"]
+texture_filter = 1
+offset_left = 472.0
+offset_right = 640.0
+offset_bottom = 24.0
+text = "Best Score: X"
+label_settings = SubResource("LabelSettings_15mv3")
+horizontal_alignment = 2
+
+[node name="Timer" type="Timer" parent="GameManager"]
+wait_time = 0.5
+autostart = true
+
+[node name="Character" parent="." instance=ExtResource("3_rus8k")]
+position = Vector2(80, 328)
+
+[connection signal="timeout" from="GameManager/Timer" to="GameManager" method="_on_timer_timeout"]

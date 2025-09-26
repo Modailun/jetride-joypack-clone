@@ -1,9 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://x6q1ghj5wvk8"]
+[gd_scene load_steps=3 format=3 uid="uid://x6q1ghj5wvk8"]
 
 [ext_resource type="Texture2D" uid="uid://y732g558gh3g" path="res://assets/sprites/Obstacle test.png" id="1_7ukg5"]
+[ext_resource type="Script" uid="uid://d3cxv42ti8kue" path="res://scripts/obstacle.gd" id="1_drdry"]
 
-[node name="Obstacle" type="StaticBody2D"]
+[node name="Obstacle" type="Area2D"]
 texture_filter = 1
+script = ExtResource("1_drdry")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
 scale = Vector2(0.125, 0.125)
@@ -13,3 +15,5 @@ polygon = PackedVector2Array(3, -64, -35, -64, -35, -47.5, -20, -43.2, -20, -34,
 texture_filter = 1
 scale = Vector2(0.125, 0.125)
 texture = ExtResource("1_7ukg5")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
