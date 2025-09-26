@@ -5,10 +5,10 @@
 [ext_resource type="PackedScene" uid="uid://b8kifyk7hc6nl" path="res://scenes/character.tscn" id="3_rus8k"]
 [ext_resource type="PackedScene" uid="uid://s0tl2ed8u8co" path="res://scenes/wall.tscn" id="4_5xbjy"]
 [ext_resource type="Script" uid="uid://dos3stpgmg4re" path="res://scripts/game_manager.gd" id="5_fcfvj"]
-[ext_resource type="SystemFont" uid="uid://d28qwrr684wsa" path="res://assets/font/Pixel Font Thin.tres" id="6_pa8r4"]
+[ext_resource type="FontFile" uid="uid://03bvk8s1f174" path="res://assets/font/PixelOperator8.ttf" id="5_pa8r4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_15mv3"]
-font = ExtResource("6_pa8r4")
+font = ExtResource("5_pa8r4")
 
 [node name="Level1" type="MarginContainer"]
 anchors_preset = 15

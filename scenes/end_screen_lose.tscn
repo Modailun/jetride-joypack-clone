@@ -2,12 +2,12 @@
 
 [ext_resource type="PackedScene" uid="uid://deuoysgixlqxu" path="res://scenes/background.tscn" id="1_sfd4r"]
 [ext_resource type="Script" uid="uid://chbn4twgxw6ol" path="res://scripts/end_screen_lose.gd" id="1_vfn7w"]
-[ext_resource type="SystemFont" uid="uid://dqs8dyyyocwg8" path="res://assets/font/new_system_font.tres" id="2_vfn7w"]
+[ext_resource type="FontFile" uid="uid://03bvk8s1f174" path="res://assets/font/PixelOperator8.ttf" id="3_72nmc"]
 [ext_resource type="Theme" uid="uid://cbnm1b1f2tdh8" path="res://assets/font/new_theme.tres" id="4_bnhvy"]
 [ext_resource type="PackedScene" uid="uid://00cuijx1nyf1" path="res://scenes/pause_ui.tscn" id="5_72nmc"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_bnhvy"]
-font = ExtResource("2_vfn7w")
+font = ExtResource("3_72nmc")
 
 [sub_resource type="InputEventKey" id="InputEventKey_vuvqp"]
 device = -1
