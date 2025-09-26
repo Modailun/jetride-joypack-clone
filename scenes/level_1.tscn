@@ -1,9 +1,9 @@
 [gd_scene load_steps=5 format=3 uid="uid://dhvpniolrtyk5"]
 
-[ext_resource type="PackedScene" uid="uid://deuoysgixlqxu" path="res://scenes/background.tscn" id="1_014kd"]
+[ext_resource type="PackedScene" uid="uid://cg2evhcefxl12" path="res://scenes/background_level_1.tscn" id="1_5xbjy"]
 [ext_resource type="PackedScene" uid="uid://00cuijx1nyf1" path="res://scenes/pause_ui.tscn" id="2_bswci"]
 [ext_resource type="PackedScene" uid="uid://b8kifyk7hc6nl" path="res://scenes/character.tscn" id="3_rus8k"]
-[ext_resource type="PackedScene" path="res://scenes/wall.tscn" id="4_5xbjy"]
+[ext_resource type="PackedScene" uid="uid://s0tl2ed8u8co" path="res://scenes/wall.tscn" id="4_5xbjy"]
 
 [node name="Level1" type="MarginContainer"]
 anchors_preset = 15
@@ -12,8 +12,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Background" parent="." instance=ExtResource("1_014kd")]
-layout_mode = 2
+[node name="BackgroundLevel1" parent="." instance=ExtResource("1_5xbjy")]
+repeat_size = Vector2(1280, 0)
+autoscroll = Vector2(-100, 0)
+repeat_times = 99999
 
 [node name="PauseUI" parent="." instance=ExtResource("2_bswci")]
 
