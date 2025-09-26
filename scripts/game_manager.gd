@@ -4,15 +4,17 @@ extends Node
 var score: int = 0
 # Nombre de vies restantes
 var lives: int = 1
-# Multiplicateur de score (augmente toutes les 10 secondes détruites)
+var count: int = 0
+# Multiplicateur de score (augmente toutes les 5 secondes)
 var mul: int = 1
 var obstacle_scene: PackedScene = preload("res://scenes/obstacle.tscn")
 # Position de départ (à droite de l'écran)
 var start_position : Vector2 = Vector2(650, 150)  # Ajuste selon ton jeu
+var obstacle_speed : float = 100.0
 
 @onready var score_label: Label = $ScoreLabel
-#@onready var lives_label: Label = $LivesLabel
 @onready var best_score_label: Label = $BestScoreLabel
+@onready var timer: Timer = $Timer
 
 func _ready() -> void:
 	# Initialise les labels avec les valeurs de départ
@@ -31,9 +33,22 @@ func _on_timer_timeout() -> void:
 	obstacle.connect("obstacle_hit", _on_obstacle_hit)
 	# Optionnel : aléatoire pour la position verticale
 	obstacle.position.y = randf_range(24, 336)
+	obstacle.speed = obstacle_speed
 
 func _on_score_timer_timeout() -> void:
 	add_point(10)
+
+func _on_obstacle_speed_timer_timeout() -> void:
+	timer.wait_time = timer.wait_time * 0.9
+	#print("New obstacle timer wait time: ", timer.wait_time)
+	set_obstacle_speed(1.1)
+
+func set_obstacle_speed(mult: float) -> void:
+	# Met à jour la vitesse de tous les obstacles existants
+	obstacle_speed *= mult
+	for child in get_children():
+		if child is Area2D:
+			child.speed *= mult
 
 func _on_obstacle_hit() -> void:
 	# Gère la collision avec l'obstacle
@@ -42,7 +57,10 @@ func _on_obstacle_hit() -> void:
 # Ajoute des points au score
 func add_point(points: int) -> void:
     # Ajoute les points au score
-	score += points
+	count += 1
+	if count%5 == 1 and count > 1:
+		mul += 1
+	score += points * mul
     # Met à jour l'affichage du score
 	score_label.text = "Score: " + str(score)
 	best_score_label.text = "Best score: " + str(max(score, get_high_score()))
@@ -93,3 +111,4 @@ func get_high_score() -> int:
 		if config.has_section("HighScores"):
 			return config.get_value("HighScores", "score", 0)
 	return 0
+

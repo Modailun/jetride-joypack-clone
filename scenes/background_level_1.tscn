@@ -4,7 +4,6 @@
 [ext_resource type="Script" uid="uid://b7tu6b8kqe6n6" path="res://scripts/background_level_1.gd" id="1_tol6g"]
 
 [node name="BackgroundLevel1" type="Parallax2D"]
-autoscroll = Vector2(100, 0)
 follow_viewport = false
 ignore_camera_scroll = true
 script = ExtResource("1_tol6g")
