@@ -2,15 +2,15 @@
 
 [ext_resource type="Script" uid="uid://nvdl8w7vujm6" path="res://scripts/main_menu.gd" id="1_l6cm7"]
 [ext_resource type="PackedScene" uid="uid://deuoysgixlqxu" path="res://scenes/background.tscn" id="2_wu84c"]
-[ext_resource type="SystemFont" uid="uid://68apq54bh45j" path="res://assets/font/Pixel Font.tres" id="3_8ln24"]
+[ext_resource type="FontFile" uid="uid://ddymrhsd4ld4x" path="res://assets/font/PixelOperator8-Bold.ttf" id="3_wu84c"]
 [ext_resource type="Theme" uid="uid://cbnm1b1f2tdh8" path="res://assets/font/new_theme.tres" id="4_wu84c"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_bqqt6"]
-font = ExtResource("3_8ln24")
+font = ExtResource("3_wu84c")
 font_size = 32
 
 [sub_resource type="LabelSettings" id="LabelSettings_wu84c"]
-font = ExtResource("3_8ln24")
+font = ExtResource("3_wu84c")
 
 [node name="MainMenu" type="MarginContainer"]
 anchors_preset = 15
