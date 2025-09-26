@@ -1,6 +1,5 @@
-[gd_resource type="Theme" load_steps=8 format=3 uid="uid://cbnm1b1f2tdh8"]
+[gd_resource type="Theme" load_steps=7 format=3 uid="uid://cbnm1b1f2tdh8"]
 
-[ext_resource type="SystemFont" uid="uid://dqs8dyyyocwg8" path="res://assets/font/new_system_font.tres" id="1_relho"]
 [ext_resource type="FontFile" uid="uid://03bvk8s1f174" path="res://assets/font/PixelOperator8.ttf" id="2_6kkss"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_itict"]
@@ -92,7 +91,7 @@ Button/constants/h_separation = 4
 Button/constants/icon_max_width = 0
 Button/constants/outline_size = 0
 Button/font_sizes/font_size = 18
-Button/fonts/font = ExtResource("1_relho")
+Button/fonts/font = ExtResource("2_6kkss")
 Button/styles/disabled = SubResource("StyleBoxFlat_itict")
 Button/styles/focus = SubResource("StyleBoxFlat_hj8eu")
 Button/styles/hover = SubResource("StyleBoxFlat_7y3rm")
