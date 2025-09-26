@@ -1,6 +1,7 @@
-[gd_resource type="Theme" load_steps=7 format=3 uid="uid://cbnm1b1f2tdh8"]
+[gd_resource type="Theme" load_steps=8 format=3 uid="uid://cbnm1b1f2tdh8"]
 
 [ext_resource type="SystemFont" uid="uid://dqs8dyyyocwg8" path="res://assets/font/new_system_font.tres" id="1_relho"]
+[ext_resource type="SystemFont" uid="uid://68apq54bh45j" path="res://assets/font/Pixel Font.tres" id="2_6kkss"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_itict"]
 content_margin_left = 4.0
@@ -72,7 +73,7 @@ corner_radius_bottom_left = 3
 corner_detail = 5
 
 [resource]
-default_font = ExtResource("1_relho")
+default_font = ExtResource("2_6kkss")
 Button/colors/font_color = Color(1, 1, 1, 1)
 Button/colors/font_disabled_color = Color(0.875, 0.875, 0.875, 0.5)
 Button/colors/font_focus_color = Color(0.95, 0.95, 0.95, 1)

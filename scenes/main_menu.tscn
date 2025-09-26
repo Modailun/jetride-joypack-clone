@@ -1,25 +1,16 @@
 [gd_scene load_steps=7 format=3 uid="uid://c7kqqw0ruvxwa"]
 
 [ext_resource type="Script" uid="uid://nvdl8w7vujm6" path="res://scripts/main_menu.gd" id="1_l6cm7"]
-[ext_resource type="PackedScene" path="res://scenes/background.tscn" id="2_wu84c"]
-[ext_resource type="SystemFont" uid="uid://dqs8dyyyocwg8" path="res://assets/font/new_system_font.tres" id="3_bqqt6"]
+[ext_resource type="PackedScene" uid="uid://deuoysgixlqxu" path="res://scenes/background.tscn" id="2_wu84c"]
+[ext_resource type="SystemFont" uid="uid://68apq54bh45j" path="res://assets/font/Pixel Font.tres" id="3_8ln24"]
 [ext_resource type="Theme" uid="uid://cbnm1b1f2tdh8" path="res://assets/font/new_theme.tres" id="4_wu84c"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_bqqt6"]
-font = ExtResource("3_bqqt6")
-font_size = 48
-stacked_outline_count = 3
-stacked_outline_0/size = 4
-stacked_outline_0/color = Color(0.69803923, 0.5058824, 0.44313726, 1)
-stacked_outline_1/size = 4
-stacked_outline_1/color = Color(0.6704015, 0.3057329, 0.23076612, 1)
-stacked_outline_2/size = 4
-stacked_outline_2/color = Color(0.7900664, 0.17742503, 0.2459189, 1)
+font = ExtResource("3_8ln24")
+font_size = 32
 
 [sub_resource type="LabelSettings" id="LabelSettings_wu84c"]
-font = ExtResource("3_bqqt6")
-font_size = 18
-outline_size = 1
+font = ExtResource("3_8ln24")
 
 [node name="MainMenu" type="MarginContainer"]
 anchors_preset = 15
@@ -34,10 +25,10 @@ layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
-theme_override_constants/margin_left = 120
-theme_override_constants/margin_top = 80
-theme_override_constants/margin_right = 120
-theme_override_constants/margin_bottom = 80
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 60
+theme_override_constants/margin_bottom = 40
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -48,42 +39,50 @@ layout_mode = 2
 [node name="Title" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
-text = "Breakout Clone"
+text = "Jetride Joypack"
 label_settings = SubResource("LabelSettings_bqqt6")
 
 [node name="MenuOptions" type="VBoxContainer" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 3
-theme_override_constants/separation = 30
+theme_override_constants/separation = 10
 alignment = 1
 
 [node name="StartGame" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/MenuOptions"]
 texture_filter = 1
 layout_mode = 2
+size_flags_horizontal = 0
 theme = ExtResource("4_wu84c")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 16
 text = "New Game"
+icon_alignment = 1
 
 [node name="Options" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/MenuOptions"]
 texture_filter = 1
 layout_mode = 2
+size_flags_horizontal = 0
 theme = ExtResource("4_wu84c")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 16
 text = "Settings"
+icon_alignment = 1
 
 [node name="Credits" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/MenuOptions"]
 texture_filter = 1
 layout_mode = 2
+size_flags_horizontal = 0
 theme = ExtResource("4_wu84c")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 16
 text = "Credits"
+icon_alignment = 1
 
 [node name="Exit" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer/MenuOptions"]
 texture_filter = 1
 layout_mode = 2
+size_flags_horizontal = 0
 theme = ExtResource("4_wu84c")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 16
 text = "Exit"
+icon_alignment = 1
 
 [node name="Version" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 texture_filter = 1

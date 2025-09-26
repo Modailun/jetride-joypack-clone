@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://cg2evhcefxl12"]
+
+[ext_resource type="Texture2D" uid="uid://by7tp1wokeuxf" path="res://assets/sprites/Backgroung JetJoy test.png" id="1_ge41o"]
+
+[node name="BackgroundLevel1" type="Parallax2D"]
+autoscroll = Vector2(100, 0)
+follow_viewport = false
+ignore_camera_scroll = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture_repeat = 2
+position = Vector2(320, 179.50002)
+scale = Vector2(0.49999994, 0.57916665)
+texture = ExtResource("1_ge41o")

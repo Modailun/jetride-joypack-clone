@@ -1,4 +1,4 @@
-[gd_scene load_steps=0 format=3 uid="uid://eg62ajbv7inv"]
+[gd_scene format=3 uid="uid://deuoysgixlqxu"]
 
 [node name="Background" type="MarginContainer"]
 anchors_preset = 15

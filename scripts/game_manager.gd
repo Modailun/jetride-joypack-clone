@@ -3,7 +3,7 @@ extends Node
 # Score actuel du joueur
 var score: int = 0
 # Nombre de vies restantes
-var lives: int = 3
+var lives: int = 1
 # Compteur de bricks cassées (pour le multiplicateur)
 var count: int = 0
 # Compteur de bricks cassées depuis le début de la partie
@@ -11,15 +11,30 @@ var bricks: int = 0
 # Multiplicateur de score (augmente toutes les 5 briques détruites)
 var mul: int = 1
 # Références aux labels pour afficher le score et les vies
+var obstacle_scene: PackedScene = preload("res://scenes/obstacle.tscn")
+# Position de départ (à droite de l'écran)
+var start_position : Vector2 = Vector2(650, 150)  # Ajuste selon ton jeu
+
 @onready var score_label: Label = $ScoreLabel
-@onready var lives_label: Label = $LivesLabel
+#@onready var lives_label: Label = $LivesLabel
 @onready var best_score_label: Label = $BestScoreLabel
 
 func _ready() -> void:
 	# Initialise les labels avec les valeurs de départ
 	score_label.text = "Score: " + str(score)
-	lives_label.text = "Lives: " + str(lives)
+	#lives_label.text = "Lives: " + str(lives)
 	best_score_label.text = "Best score: " + str(get_high_score())
+	# Crée un Timer pour générer les obstacles
+
+func _on_timer_timeout() -> void:
+	# Instancie un nouvel obstacle
+	var obstacle = obstacle_scene.instantiate()
+	# Positionne l'obstacle à droite de l'écran
+	obstacle.position = start_position
+	# Ajoute l'obstacle à la scène
+	add_child(obstacle)
+	# Optionnel : aléatoire pour la position verticale
+	obstacle.position.y = randf_range(24, 336)
 
 # Ajoute des points au score
 func add_point(points: int) -> void:
@@ -54,7 +69,7 @@ func lose_life() -> void:
 		count = 0  # Réinitialise le compteur de briques
 		# Met à jour l'affichage du score et des vies
 		score_label.text = "Score: " + str(score)
-		lives_label.text = "Lives: " + str(lives)
+		#lives_label.text = "Lives: " + str(lives)
 	else:
 		# Si c'était la dernière vie, le joueur perd
 		game_over(false)
@@ -99,3 +114,4 @@ func get_high_score() -> int:
 		if config.has_section("HighScores"):
 			return config.get_value("HighScores", "score", 0)
 	return 0
+
