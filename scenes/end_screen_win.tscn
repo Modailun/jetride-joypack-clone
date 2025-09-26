@@ -1,16 +1,19 @@
-[gd_scene load_steps=10 format=3 uid="uid://bmp5kjxxabuoi"]
+[gd_scene load_steps=11 format=3 uid="uid://bmp5kjxxabuoi"]
 
 [ext_resource type="Script" uid="uid://tp51m2g1hxch" path="res://scripts/end_screen_win.gd" id="1_85u5r"]
 [ext_resource type="PackedScene" uid="uid://deuoysgixlqxu" path="res://scenes/background.tscn" id="1_o46om"]
-[ext_resource type="SystemFont" uid="uid://dqs8dyyyocwg8" path="res://assets/font/new_system_font.tres" id="2_85u5r"]
+[ext_resource type="FontFile" uid="uid://03bvk8s1f174" path="res://assets/font/PixelOperator8.ttf" id="3_vuvqp"]
 [ext_resource type="Theme" uid="uid://cbnm1b1f2tdh8" path="res://assets/font/new_theme.tres" id="4_dj5kh"]
 [ext_resource type="PackedScene" uid="uid://00cuijx1nyf1" path="res://scenes/pause_ui.tscn" id="5_vuvqp"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_bnhvy"]
-font = ExtResource("2_85u5r")
+font = ExtResource("3_vuvqp")
+
+[sub_resource type="SystemFont" id="SystemFont_ef4gk"]
+font_names = PackedStringArray("Pixel Operator 8")
 
 [sub_resource type="LabelSettings" id="LabelSettings_vuvqp"]
-font = ExtResource("2_85u5r")
+font = SubResource("SystemFont_ef4gk")
 
 [sub_resource type="InputEventKey" id="InputEventKey_vuvqp"]
 device = -1

@@ -1,11 +1,11 @@
 [gd_scene load_steps=5 format=3 uid="uid://cf3iphy74a3k2"]
 
+[ext_resource type="FontFile" uid="uid://03bvk8s1f174" path="res://assets/font/PixelOperator8.ttf" id="2_0ctdu"]
 [ext_resource type="PackedScene" uid="uid://deuoysgixlqxu" path="res://scenes/background.tscn" id="2_8gwij"]
-[ext_resource type="SystemFont" uid="uid://dqs8dyyyocwg8" path="res://assets/font/new_system_font.tres" id="3_mah5v"]
 [ext_resource type="PackedScene" uid="uid://00cuijx1nyf1" path="res://scenes/pause_ui.tscn" id="4_kyhnv"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_ooihk"]
-font = ExtResource("3_mah5v")
+font = ExtResource("2_0ctdu")
 font_size = 32
 
 [node name="Credits" type="MarginContainer"]
