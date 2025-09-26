@@ -1,0 +1,28 @@
+[gd_scene load_steps=5 format=3 uid="uid://da02n1omopkkx"]
+
+[ext_resource type="Script" uid="uid://bh0uyge1alhun" path="res://scripts/pause_ui.gd" id="1_ypbrs"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_rus8k"]
+device = -1
+keycode = 4194305
+
+[sub_resource type="Shortcut" id="Shortcut_ypbrs"]
+events = [SubResource("InputEventKey_rus8k")]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_uwb1u"]
+load_path = "res://.godot/imported/exitRight.png-e683ae44306d9cc20becfa1780d0bf63.ctex"
+
+[node name="PauseUI" type="CanvasLayer"]
+scale = Vector2(0.25, 0.25)
+transform = Transform2D(0.25, 0, 0, 0.25, 0, 0)
+script = ExtResource("1_ypbrs")
+
+[node name="TextureButton" type="TextureButton" parent="."]
+texture_filter = 1
+offset_right = 256.0
+offset_bottom = 256.0
+shortcut = SubResource("Shortcut_ypbrs")
+texture_normal = SubResource("CompressedTexture2D_uwb1u")
+stretch_mode = 0
+
+[connection signal="pressed" from="TextureButton" to="." method="_on_texture_button_pressed"]
