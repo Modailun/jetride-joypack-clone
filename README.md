@@ -3,7 +3,7 @@
 A clone built with [Godot Engine](https://godotengine.org/) and GDScript in the context of an exercice for me to learn how to make games.
 
 ![Godot Engine](https://img.shields.io/badge/Godot-4.5-blue)
-![License: GPL-3.0](https://img.shields.io/badge/License-GPL--3.0-yellow) 
+![License: MIT](https://img.shields.io/badge/License-MIT-yellow)
 
 ---
 
