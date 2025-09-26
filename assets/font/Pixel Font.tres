@@ -1,0 +1,5 @@
+[gd_resource type="SystemFont" format=3 uid="uid://68apq54bh45j"]
+
+[resource]
+font_names = PackedStringArray("Pixel Operator 8")
+font_weight = 800

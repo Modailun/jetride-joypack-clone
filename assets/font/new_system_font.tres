@@ -1,5 +1,4 @@
 [gd_resource type="SystemFont" format=3 uid="uid://dqs8dyyyocwg8"]
 
 [resource]
-font_names = PackedStringArray("Comic Sans MS")
-multichannel_signed_distance_field = true
+font_names = PackedStringArray("Pixel Operator 8")

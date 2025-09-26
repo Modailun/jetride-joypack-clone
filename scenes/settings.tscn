@@ -1,9 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://dcfklyb07o5r4"]
+[gd_scene load_steps=7 format=3 uid="uid://2fcvn8ujk3lh"]
 
-[ext_resource type="Script" uid="uid://rbk0474l43gc" path="res://scripts/settings.gd" id="1_f4mfi"]
-[ext_resource type="PackedScene" uid="uid://eg62ajbv7inv" path="res://scenes/background.tscn" id="2_es4n0"]
+[ext_resource type="Script" uid="uid://bfsfywd3bcykc" path="res://scripts/settings.gd" id="1_f4mfi"]
+[ext_resource type="PackedScene" uid="uid://deuoysgixlqxu" path="res://scenes/background.tscn" id="2_es4n0"]
 [ext_resource type="Theme" uid="uid://cbnm1b1f2tdh8" path="res://assets/font/new_theme.tres" id="3_gis3k"]
-[ext_resource type="PackedScene" uid="uid://da02n1omopkkx" path="res://scenes/pause_ui.tscn" id="4_83j8s"]
+[ext_resource type="PackedScene" uid="uid://00cuijx1nyf1" path="res://scenes/pause_ui.tscn" id="4_83j8s"]
 
 [sub_resource type="InputEventKey" id="InputEventKey_vuvqp"]
 device = -1
@@ -26,10 +26,10 @@ layout_mode = 2
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 2
-theme_override_constants/margin_left = 120
-theme_override_constants/margin_top = 80
-theme_override_constants/margin_right = 120
-theme_override_constants/margin_bottom = 80
+theme_override_constants/margin_left = 60
+theme_override_constants/margin_top = 40
+theme_override_constants/margin_right = 60
+theme_override_constants/margin_bottom = 40
 
 [node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -47,7 +47,7 @@ texture_filter = 1
 layout_mode = 2
 theme = ExtResource("3_gis3k")
 theme_type_variation = &"FlatButton"
-theme_override_font_sizes/font_size = 64
+theme_override_font_sizes/font_size = 32
 shortcut = SubResource("Shortcut_ef4gk")
 text = "Delete High Score"
 icon_alignment = 1
