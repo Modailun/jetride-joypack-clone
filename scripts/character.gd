@@ -1,10 +1,10 @@
 extends RigidBody2D
 
 # Force appliquée par le jetpack (ajustable)
-var jetpack_force : float = 4000.0
+var jetpack_force : float = 150000.0
 # Vitesse maximale vers le haut (pour éviter une accélération infinie)
 var max_upward_speed : float = 800.0
-var air_resistance : float = 0.95  # Facteur de ralentissement
+var air_resistance : float = 0.98  # Facteur de ralentissement
 
 func _physics_process(delta: float) -> void:
 	# Si le bouton "Jump" est maintenu et que la vitesse vers le haut n'est pas trop élevée

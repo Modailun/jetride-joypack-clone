@@ -10,8 +10,10 @@ absorbent = true
 size = Vector2(32, 32)
 
 [node name="Character" type="RigidBody2D"]
+mass = 80.0
 physics_material_override = SubResource("PhysicsMaterial_i8bdw")
-gravity_scale = 1.5
+lock_rotation = true
+max_contacts_reported = 10
 script = ExtResource("1_agfs1")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
