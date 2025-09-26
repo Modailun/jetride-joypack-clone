@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://dhvpniolrtyk5"]
+[gd_scene load_steps=5 format=3 uid="uid://dhvpniolrtyk5"]
 
 [ext_resource type="PackedScene" uid="uid://deuoysgixlqxu" path="res://scenes/background.tscn" id="1_014kd"]
 [ext_resource type="PackedScene" uid="uid://00cuijx1nyf1" path="res://scenes/pause_ui.tscn" id="2_bswci"]
+[ext_resource type="PackedScene" uid="uid://b8kifyk7hc6nl" path="res://scenes/character.tscn" id="3_rus8k"]
+[ext_resource type="PackedScene" path="res://scenes/wall.tscn" id="4_5xbjy"]
 
 [node name="Level1" type="MarginContainer"]
 anchors_preset = 15
@@ -14,3 +16,16 @@ grow_vertical = 2
 layout_mode = 2
 
 [node name="PauseUI" parent="." instance=ExtResource("2_bswci")]
+
+[node name="Character" parent="." instance=ExtResource("3_rus8k")]
+position = Vector2(80, 184)
+
+[node name="Wall" parent="." instance=ExtResource("4_5xbjy")]
+position = Vector2(320, 360)
+
+[node name="Wall2" parent="." instance=ExtResource("4_5xbjy")]
+position = Vector2(320, 0)
+rotation = -3.1415927
+
+[node name="Camera2D" type="Camera2D" parent="."]
+anchor_mode = 0
