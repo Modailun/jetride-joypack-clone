@@ -48,7 +48,7 @@ label_settings = SubResource("LabelSettings_15mv3")
 
 [node name="BestScoreLabel" type="Label" parent="GameManager"]
 texture_filter = 1
-offset_left = 472.0
+offset_left = 320.0
 offset_right = 640.0
 offset_bottom = 24.0
 text = "Best Score: X"
@@ -59,7 +59,12 @@ horizontal_alignment = 2
 wait_time = 0.5
 autostart = true
 
+[node name="ScoreTimer" type="Timer" parent="GameManager"]
+wait_time = 0.8
+autostart = true
+
 [node name="Character" parent="." instance=ExtResource("3_rus8k")]
 position = Vector2(80, 328)
 
 [connection signal="timeout" from="GameManager/Timer" to="GameManager" method="_on_timer_timeout"]
+[connection signal="timeout" from="GameManager/ScoreTimer" to="GameManager" method="_on_score_timer_timeout"]
