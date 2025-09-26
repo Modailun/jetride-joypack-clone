@@ -104,8 +104,7 @@ jobs:
           name: Release ${{ env.TAGVERSION }}
           body: |
             **Changelog for ${{ env.TAGVERSION }}**
-            - Added releases for Windows, Linux, and Web platforms with the first version of the game.
-            - Basic gameplay mechanics implemented.
+            - Fixed font rendering
           files: |
             build/${{ env.EXPORT_NAME }}-windows-${{ env.TAGVERSION }}.zip
             build/${{ env.EXPORT_NAME }}-linux-${{ env.TAGVERSION }}.zip
