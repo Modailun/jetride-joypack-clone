@@ -1,7 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://00cuijx1nyf1"]
+[gd_scene load_steps=7 format=3 uid="uid://00cuijx1nyf1"]
 
 [ext_resource type="Script" uid="uid://m1vmkdtgrqwm" path="res://scripts/pause_ui.gd" id="1_ypbrs"]
+[ext_resource type="FontFile" uid="uid://03bvk8s1f174" path="res://assets/font/PixelOperator8.ttf" id="2_vcehk"]
 [ext_resource type="Texture2D" uid="uid://bojovjg72ij3j" path="res://assets/sprites/exit icon.png" id="2_ypbrs"]
+
+[sub_resource type="Theme" id="Theme_ypbrs"]
+default_font = ExtResource("2_vcehk")
 
 [sub_resource type="InputEventKey" id="InputEventKey_rus8k"]
 device = -1
@@ -19,8 +23,8 @@ script = ExtResource("1_ypbrs")
 texture_filter = 1
 offset_right = 128.0
 offset_bottom = 128.0
+theme = SubResource("Theme_ypbrs")
 shortcut = SubResource("Shortcut_ypbrs")
-shortcut_in_tooltip = false
 texture_normal = ExtResource("2_ypbrs")
 stretch_mode = 0
 

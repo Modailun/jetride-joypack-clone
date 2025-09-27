@@ -21,6 +21,7 @@ grow_vertical = 2
 anchor_mode = 0
 
 [node name="BackgroundLevel1" parent="." instance=ExtResource("1_5xbjy")]
+scroll_offset = Vector2(-592, 0)
 repeat_size = Vector2(640, 0)
 autoscroll = Vector2(-100, 0)
 repeat_times = 99999

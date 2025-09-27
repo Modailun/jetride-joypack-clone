@@ -1,12 +1,20 @@
-[gd_scene load_steps=3 format=3 uid="uid://s0tl2ed8u8co"]
+[gd_scene load_steps=4 format=3 uid="uid://s0tl2ed8u8co"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_uvhfp"]
 absorbent = true
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_uvhfp"]
 
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_uvhfp"]
+cull_mode = 2
+polygon = PackedVector2Array(-512, 0, 424, 0, 424, 384, -512, 384, -512, 0)
+
 [node name="Wall" type="StaticBody2D"]
 physics_material_override = SubResource("PhysicsMaterial_uvhfp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("WorldBoundaryShape2D_uvhfp")
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="."]
+position = Vector2(0, 32)
+occluder = SubResource("OccluderPolygon2D_uvhfp")
