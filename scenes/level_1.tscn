@@ -66,6 +66,10 @@ autostart = true
 wait_time = 5.0
 autostart = true
 
+[node name="DeathTimer" type="Timer" parent="GameManager"]
+wait_time = 0.6
+one_shot = true
+
 [node name="Character" parent="." instance=ExtResource("3_rus8k")]
 position = Vector2(80, 328)
 
@@ -75,3 +79,4 @@ scroll_offset = Vector2(318.005, 355.52)
 [connection signal="timeout" from="GameManager/Timer" to="GameManager" method="_on_timer_timeout"]
 [connection signal="timeout" from="GameManager/ScoreTimer" to="GameManager" method="_on_score_timer_timeout"]
 [connection signal="timeout" from="GameManager/ObstacleSpeedTimer" to="GameManager" method="_on_obstacle_speed_timer_timeout"]
+[connection signal="timeout" from="GameManager/DeathTimer" to="GameManager" method="_on_death_timer_timeout"]
