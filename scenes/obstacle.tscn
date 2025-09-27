@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://x6q1ghj5wvk8"]
 
 [ext_resource type="Script" uid="uid://d3cxv42ti8kue" path="res://scripts/obstacle.gd" id="1_drdry"]
-[ext_resource type="Texture2D" uid="uid://df7h2n2xfdb15" path="res://assets/sprites/Obstacles.png" id="2_drdry"]
+[ext_resource type="Texture2D" uid="uid://8ex54p657fpu" path="res://assets/sprites/Obstacles.png" id="2_drdry"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_0drx6"]
 radius = 9.0

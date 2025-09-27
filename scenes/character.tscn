@@ -4,7 +4,7 @@
 [ext_resource type="Material" uid="uid://bq2cm10wgjwso" path="res://assets/TrusterParticules.tres" id="3_dp8ca"]
 [ext_resource type="Texture2D" uid="uid://cggbafilcwgjx" path="res://assets/sprites/Particule JetJoy.png" id="3_lrhn5"]
 [ext_resource type="Material" uid="uid://3o3owxy8neef" path="res://assets/SmokeParticles.tres" id="4_0lw5n"]
-[ext_resource type="Texture2D" uid="uid://2qj58oq63hil" path="res://assets/sprites/Player.png" id="6_0lw5n"]
+[ext_resource type="Texture2D" uid="uid://541n3eb8ggfg" path="res://assets/sprites/Player.png" id="5_dp8ca"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_i8bdw"]
 absorbent = true
@@ -19,22 +19,22 @@ colors = PackedColorArray(1, 1, 0, 1, 0.87734634, 3.8745256e-06, 1.2513996e-06, 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i8bdw"]
 size = Vector2(28, 32)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_2cgup"]
-atlas = ExtResource("6_0lw5n")
+[sub_resource type="AtlasTexture" id="AtlasTexture_0lw5n"]
+atlas = ExtResource("5_dp8ca")
 region = Rect2(0, 0, 128, 128)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_a5ia6"]
-atlas = ExtResource("6_0lw5n")
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cgup"]
+atlas = ExtResource("5_dp8ca")
 region = Rect2(128, 0, 128, 128)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_0dpix"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_2cgup")
+"texture": SubResource("AtlasTexture_0lw5n")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_a5ia6")
+"texture": SubResource("AtlasTexture_2cgup")
 }],
 "loop": true,
 "name": &"default",
