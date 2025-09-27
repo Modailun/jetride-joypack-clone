@@ -4,7 +4,6 @@ extends Area2D
 var speed : float = 100.0
 
 signal obstacle_hit(player)
-@onready var timer: Timer = $Timer
 @onready var cpuparticles_2d: CPUParticles2D = $CPUParticles2D
 
 func _physics_process(delta: float) -> void:
@@ -23,12 +22,6 @@ func _on_body_entered(body: Node2D) -> void:
 		Engine.time_scale = 0.5
 		# Disable collision shape for the player
 		body.queue_free()
-		# Start timer to reset time scale, re-enable input and decrease life
-		timer.start()
-
-
-func _on_timer_timeout() -> void:
-	# Reset time scale
-	Engine.time_scale = 1
-	# Decrease life
-	emit_signal("obstacle_hit")
+		# Emit signal to notify the game manager
+		emit_signal("obstacle_hit")
+	
