@@ -104,7 +104,9 @@ jobs:
           name: Release ${{ env.TAGVERSION }}
           body: |
             **Changelog for ${{ env.TAGVERSION }}**
-            - Added parallax backgrounds
+            - Added death effect when hitting obstacles.
+            - Implemented slow-motion effect upon collision.
+            - First complete prototype.
           files: |
             build/${{ env.EXPORT_NAME }}-windows-${{ env.TAGVERSION }}.zip
             build/${{ env.EXPORT_NAME }}-linux-${{ env.TAGVERSION }}.zip
