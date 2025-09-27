@@ -6,7 +6,7 @@
 
 [sub_resource type="LabelSettings" id="LabelSettings_ooihk"]
 font = ExtResource("2_0ctdu")
-font_size = 32
+font_size = 24
 
 [node name="Credits" type="MarginContainer"]
 anchors_preset = 15
@@ -39,7 +39,9 @@ layout_mode = 2
 [node name="CreditLabel" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer/MarginContainer"]
 texture_filter = 1
 layout_mode = 2
-text = "Made by Modailun"
+text = "Programming - Modailun
+
+Art - Essou & Modailun"
 label_settings = SubResource("LabelSettings_ooihk")
 horizontal_alignment = 1
 vertical_alignment = 1
