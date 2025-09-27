@@ -15,6 +15,7 @@ var obstacle_speed : float = 100.0
 @onready var score_label: Label = $ScoreLabel
 @onready var best_score_label: Label = $BestScoreLabel
 @onready var timer: Timer = $Timer
+@onready var death_timer: Timer = $DeathTimer
 
 func _ready() -> void:
 	# Initialise les labels avec les valeurs de départ
@@ -51,8 +52,8 @@ func set_obstacle_speed(mult: float) -> void:
 			child.speed *= mult
 
 func _on_obstacle_hit() -> void:
+	death_timer.start()
 	# Gère la collision avec l'obstacle
-	lose_life()  # Retire une vie au joueur
 
 # Ajoute des points au score
 func add_point(points: int) -> void:
@@ -112,3 +113,8 @@ func get_high_score() -> int:
 			return config.get_value("HighScores", "score", 0)
 	return 0
 
+
+
+func _on_death_timer_timeout() -> void:
+	Engine.time_scale = 1
+	lose_life()  # Retire une vie au joueur
