@@ -1,0 +1,17 @@
+[gd_scene load_steps=3 format=3 uid="uid://di0067yqytmsg"]
+
+[ext_resource type="Texture2D" uid="uid://ddks6p0ojb2h3" path="res://assets/sprites/Galaxy.png" id="1_xisy1"]
+[ext_resource type="PackedScene" uid="uid://cg2evhcefxl12" path="res://scenes/background_level_1.tscn" id="2_uqych"]
+
+[node name="BackgroungGame" type="Node2D"]
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_xisy1")
+
+[node name="BackgroundLevel1" parent="." instance=ExtResource("2_uqych")]
+repeat_size = Vector2(640, 0)
+autoscroll = Vector2(-100, 0)
+repeat_times = 99999

@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://cco6kms83ehqg"]
+
+[ext_resource type="Script" uid="uid://c0wifx36itrbg" path="res://scripts/floor.gd" id="1_kuqtn"]
+[ext_resource type="Texture2D" uid="uid://dolotv1lw7wbx" path="res://assets/sprites/floor.png" id="1_ukw5w"]
+
+[node name="Floor" type="Parallax2D"]
+repeat_size = Vector2(640, 0)
+autoscroll = Vector2(-100, 0)
+repeat_times = 99999
+script = ExtResource("1_kuqtn")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("1_ukw5w")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 5.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

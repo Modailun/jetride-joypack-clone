@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://2qf1dmx0syiq"
-path="res://.godot/imported/Background.png-4e7706ef682cc0d3d504c310fedc1216.ctex"
+uid="uid://datlmfnpb6fgk"
+path="res://.godot/imported/Foreground JetJoy.png-20a1f649cdfeb1366d288958d7f4dacd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Background.png"
-dest_files=["res://.godot/imported/Background.png-4e7706ef682cc0d3d504c310fedc1216.ctex"]
+source_file="res://assets/sprites/Foreground JetJoy.png"
+dest_files=["res://.godot/imported/Foreground JetJoy.png-20a1f649cdfeb1366d288958d7f4dacd.ctex"]
 
 [params]
 
