@@ -35,6 +35,14 @@ animations = [{
 "speed": 24.0
 }]
 
+[sub_resource type="Curve" id="Curve_drdry"]
+_data = [Vector2(0, 0.5), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 2
+
+[sub_resource type="Gradient" id="Gradient_cjuko"]
+offsets = PackedFloat32Array(0, 0.3263889, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 0, 1, 0.7059392, 3.5376102e-06, 3.85046e-07, 1)
+
 [node name="Obstacle" type="Area2D"]
 texture_filter = 1
 script = ExtResource("1_drdry")
@@ -49,4 +57,29 @@ autoplay = "default"
 frame = 2
 frame_progress = 0.37010625
 
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.6
+one_shot = true
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+texture_filter = 1
+emitting = false
+amount = 64
+lifetime = 0.2
+one_shot = true
+speed_scale = 0.2
+explosiveness = 1.0
+direction = Vector2(1, 1)
+spread = 180.0
+gravity = Vector2(0, 0)
+initial_velocity_min = 100.0
+initial_velocity_max = 200.0
+scale_amount_min = 2.5
+scale_amount_max = 5.0
+scale_amount_curve = SubResource("Curve_drdry")
+color_ramp = SubResource("Gradient_cjuko")
+hue_variation_min = -1.0
+hue_variation_max = 1.0
+
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
