@@ -87,7 +87,7 @@ icon_alignment = 1
 [node name="Version" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
 texture_filter = 1
 layout_mode = 2
-text = "v0.1.0
+text = "v0.1.0a
 Made with Godot"
 label_settings = SubResource("LabelSettings_wu84c")
 
