@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b517cfd34ay2l"
-path="res://.godot/imported/Chara JetJoy.png-7444cc4426dc4a6835d63c821e744a75.ctex"
+uid="uid://df7h2n2xfdb15"
+path="res://.godot/imported/Obstacles.png-c98ecd5bd2cd99ba5a2e6c39a7439ffd.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Chara JetJoy.png"
-dest_files=["res://.godot/imported/Chara JetJoy.png-7444cc4426dc4a6835d63c821e744a75.ctex"]
+source_file="res://assets/sprites/Obstacles.png"
+dest_files=["res://.godot/imported/Obstacles.png-c98ecd5bd2cd99ba5a2e6c39a7439ffd.ctex"]
 
 [params]
 

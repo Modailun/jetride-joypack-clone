@@ -14,14 +14,11 @@ point_count = 2
 curve = SubResource("Curve_dp8ca")
 
 [resource]
-emission_shape = 6
-emission_ring_axis = Vector3(0, 0, 1)
-emission_ring_height = 0.0
-emission_ring_radius = 12.0
-emission_ring_inner_radius = 12.0
-emission_ring_cone_angle = 0.0
-spread = 180.0
+emission_shape = 2
+emission_sphere_radius = 6.0
 gravity = Vector3(0, 98, 0)
+linear_accel_min = -2.2351742e-06
+linear_accel_max = -2.2351742e-06
 scale_min = 0.099999994
 scale_max = 0.19999999
 scale_curve = SubResource("CurveTexture_0lw5n")

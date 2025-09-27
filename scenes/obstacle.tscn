@@ -1,19 +1,52 @@
-[gd_scene load_steps=3 format=3 uid="uid://x6q1ghj5wvk8"]
+[gd_scene load_steps=8 format=3 uid="uid://x6q1ghj5wvk8"]
 
-[ext_resource type="Texture2D" uid="uid://y732g558gh3g" path="res://assets/sprites/Obstacle test.png" id="1_7ukg5"]
 [ext_resource type="Script" uid="uid://d3cxv42ti8kue" path="res://scripts/obstacle.gd" id="1_drdry"]
+[ext_resource type="Texture2D" uid="uid://df7h2n2xfdb15" path="res://assets/sprites/Obstacles.png" id="2_drdry"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_0drx6"]
+radius = 9.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cjuko"]
+atlas = ExtResource("2_drdry")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sh7k1"]
+atlas = ExtResource("2_drdry")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_i4xvc"]
+atlas = ExtResource("2_drdry")
+region = Rect2(256, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5oy3q"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cjuko")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sh7k1")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_i4xvc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 24.0
+}]
 
 [node name="Obstacle" type="Area2D"]
 texture_filter = 1
 script = ExtResource("1_drdry")
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="."]
-scale = Vector2(0.125, 0.125)
-polygon = PackedVector2Array(3, -64, -35, -64, -35, -47.5, -20, -43.2, -20, -34, -64, -0.29999924, -64, 32.5, -56.9, 36.6, -32.5, 21.900002, -0.29999924, 64, 32.5, 64, 36.6, 56.9, 21.5, 31.800003, 52.1, 3, 64, 3, 64, -32.6, 56.9, -36.6, 31.800003, -21.599998, 3, -52.1)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_0drx6")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-texture_filter = 1
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.125, 0.125)
-texture = ExtResource("1_7ukg5")
+sprite_frames = SubResource("SpriteFrames_5oy3q")
+autoplay = "default"
+frame = 2
+frame_progress = 0.37010625
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
