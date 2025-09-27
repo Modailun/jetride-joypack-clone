@@ -12,8 +12,10 @@ func delete_high_score() -> void:
 		if config.has_section("HighScores"):
 			config.erase_section("HighScores")
 			config.save("user://savegame.cfg")
-			print("High score deleted.")
+			#print("High score deleted.")
 		else:
-			print("No high score to delete.")
+			pass
+			#print("No high score to delete.")
 	else:
-		print("Failed to load save file.")
+		pass
+		#print("Failed to load save file.")

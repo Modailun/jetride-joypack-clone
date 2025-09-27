@@ -17,21 +17,18 @@ func _physics_process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	#print("Obstacle hit: ", body.name)
-	if not body.name == "Character":
+	if body.name == "Character":
 		cpuparticles_2d.emitting = true
 		# Slow motion effect
 		Engine.time_scale = 0.5
-		# Disable further input processing
-		get_viewport().set_process_input(false)
 		# Disable collision shape for the player
-		body.get_node("CollisionShape2D").queue_free()
+		body.queue_free()
 		# Start timer to reset time scale, re-enable input and decrease life
 		timer.start()
 
 
 func _on_timer_timeout() -> void:
-	# Reset time scale and re-enable input
+	# Reset time scale
 	Engine.time_scale = 1
-	get_viewport().set_process_input(true)
 	# Decrease life
 	emit_signal("obstacle_hit")
