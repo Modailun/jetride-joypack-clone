@@ -10,6 +10,8 @@ cull_mode = 2
 polygon = PackedVector2Array(-512, 0, 424, 0, 424, 384, -512, 384, -512, 0)
 
 [node name="Wall" type="StaticBody2D"]
+collision_layer = 3
+collision_mask = 3
 physics_material_override = SubResource("PhysicsMaterial_uvhfp")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
