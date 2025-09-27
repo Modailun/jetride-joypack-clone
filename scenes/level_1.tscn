@@ -1,11 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://dhvpniolrtyk5"]
+[gd_scene load_steps=9 format=3 uid="uid://dhvpniolrtyk5"]
 
-[ext_resource type="PackedScene" uid="uid://cg2evhcefxl12" path="res://scenes/background_level_1.tscn" id="1_5xbjy"]
+[ext_resource type="PackedScene" uid="uid://di0067yqytmsg" path="res://scenes/backgroung_game.tscn" id="1_fcfvj"]
 [ext_resource type="PackedScene" uid="uid://00cuijx1nyf1" path="res://scenes/pause_ui.tscn" id="2_bswci"]
 [ext_resource type="PackedScene" uid="uid://b8kifyk7hc6nl" path="res://scenes/character.tscn" id="3_rus8k"]
 [ext_resource type="PackedScene" uid="uid://s0tl2ed8u8co" path="res://scenes/wall.tscn" id="4_5xbjy"]
 [ext_resource type="Script" uid="uid://dos3stpgmg4re" path="res://scripts/game_manager.gd" id="5_fcfvj"]
 [ext_resource type="FontFile" uid="uid://03bvk8s1f174" path="res://assets/font/PixelOperator8.ttf" id="5_pa8r4"]
+[ext_resource type="PackedScene" uid="uid://cco6kms83ehqg" path="res://scenes/floor.tscn" id="7_pa8r4"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_15mv3"]
 font = ExtResource("5_pa8r4")
@@ -20,11 +21,8 @@ grow_vertical = 2
 [node name="Camera2D" type="Camera2D" parent="."]
 anchor_mode = 0
 
-[node name="BackgroundLevel1" parent="." instance=ExtResource("1_5xbjy")]
-scroll_offset = Vector2(-592, 0)
-repeat_size = Vector2(640, 0)
-autoscroll = Vector2(-100, 0)
-repeat_times = 99999
+[node name="BackgroungGame" parent="." instance=ExtResource("1_fcfvj")]
+position = Vector2(320, 180)
 
 [node name="PauseUI" parent="." instance=ExtResource("2_bswci")]
 
@@ -71,9 +69,8 @@ autostart = true
 [node name="Character" parent="." instance=ExtResource("3_rus8k")]
 position = Vector2(80, 328)
 
-[node name="Floor" type="Polygon2D" parent="."]
-color = Color(0.29803923, 0.24313726, 0.14117648, 1)
-polygon = PackedVector2Array(-152, 344, 808, 344, 808, 384, -152, 384)
+[node name="Floor" parent="." instance=ExtResource("7_pa8r4")]
+scroll_offset = Vector2(318.005, 355.52)
 
 [connection signal="timeout" from="GameManager/Timer" to="GameManager" method="_on_timer_timeout"]
 [connection signal="timeout" from="GameManager/ScoreTimer" to="GameManager" method="_on_score_timer_timeout"]

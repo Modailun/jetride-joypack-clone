@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://by7tp1wokeuxf"
-path="res://.godot/imported/Backgroung JetJoy test.png-321834f81151b68fdc4e1a40690f31e8.ctex"
+uid="uid://ddks6p0ojb2h3"
+path="res://.godot/imported/Galaxy.png-051d51331aed483a6a37857403da2bff.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/sprites/Backgroung JetJoy test.png"
-dest_files=["res://.godot/imported/Backgroung JetJoy test.png-321834f81151b68fdc4e1a40690f31e8.ctex"]
+source_file="res://assets/sprites/Galaxy.png"
+dest_files=["res://.godot/imported/Galaxy.png-051d51331aed483a6a37857403da2bff.ctex"]
 
 [params]
 

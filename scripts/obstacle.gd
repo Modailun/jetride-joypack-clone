@@ -15,7 +15,9 @@ func _physics_process(delta: float) -> void:
 
 func _on_body_entered(body: Node2D) -> void:
 	#print("Obstacle hit: ", body.name)
-	body.queue_free()
-	# Decrease life
-	#get_parent().lose_life()
-	emit_signal("obstacle_hit")
+	if body.name == "Character":
+		# Remove the obstacle
+		body.queue_free()
+		# Decrease life
+		#get_parent().lose_life()
+		emit_signal("obstacle_hit")

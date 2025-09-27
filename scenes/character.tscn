@@ -1,10 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://b8kifyk7hc6nl"]
+[gd_scene load_steps=13 format=3 uid="uid://b8kifyk7hc6nl"]
 
 [ext_resource type="Script" uid="uid://bkc2o3s24pkg8" path="res://scripts/character.gd" id="1_agfs1"]
-[ext_resource type="Texture2D" uid="uid://b517cfd34ay2l" path="res://assets/sprites/Chara JetJoy.png" id="2_rkhd4"]
 [ext_resource type="Material" uid="uid://bq2cm10wgjwso" path="res://assets/TrusterParticules.tres" id="3_dp8ca"]
 [ext_resource type="Texture2D" uid="uid://cggbafilcwgjx" path="res://assets/sprites/Particule JetJoy.png" id="3_lrhn5"]
 [ext_resource type="Material" uid="uid://3o3owxy8neef" path="res://assets/SmokeParticles.tres" id="4_0lw5n"]
+[ext_resource type="Texture2D" uid="uid://2qj58oq63hil" path="res://assets/sprites/Player.png" id="6_0lw5n"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_i8bdw"]
 absorbent = true
@@ -17,7 +17,29 @@ point_count = 2
 colors = PackedColorArray(1, 1, 0, 1, 0.87734634, 3.8745256e-06, 1.2513996e-06, 1)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_i8bdw"]
-size = Vector2(32, 32)
+size = Vector2(28, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2cgup"]
+atlas = ExtResource("6_0lw5n")
+region = Rect2(0, 0, 128, 128)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a5ia6"]
+atlas = ExtResource("6_0lw5n")
+region = Rect2(128, 0, 128, 128)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0dpix"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2cgup")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a5ia6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [node name="Character" type="RigidBody2D"]
 mass = 80.0
@@ -29,6 +51,7 @@ script = ExtResource("1_agfs1")
 [node name="TrusterParticle" type="GPUParticles2D" parent="."]
 visible = false
 texture_filter = 1
+position = Vector2(-4, 4)
 amount = 64
 texture = ExtResource("3_lrhn5")
 lifetime = 3.0
@@ -37,7 +60,9 @@ randomness = 1.0
 process_material = ExtResource("3_dp8ca")
 
 [node name="TrusterCPUParticules" type="CPUParticles2D" parent="."]
+visible = false
 texture_filter = 1
+position = Vector2(-4, 2)
 amount = 32
 texture = ExtResource("3_lrhn5")
 lifetime = 0.6
@@ -53,6 +78,7 @@ color_ramp = SubResource("Gradient_dp8ca")
 
 [node name="SmokeParticle" type="GPUParticles2D" parent="."]
 visible = false
+position = Vector2(-4, 6)
 amount = 128
 texture = ExtResource("3_lrhn5")
 lifetime = 2.0
@@ -61,9 +87,12 @@ randomness = 1.0
 process_material = ExtResource("4_0lw5n")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(2, 0)
 shape = SubResource("RectangleShape2D_i8bdw")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(0.25, 0.25)
-texture = ExtResource("2_rkhd4")
+sprite_frames = SubResource("SpriteFrames_0dpix")
+autoplay = "default"
+frame_progress = 0.78757143

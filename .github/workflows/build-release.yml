@@ -104,7 +104,7 @@ jobs:
           name: Release ${{ env.TAGVERSION }}
           body: |
             **Changelog for ${{ env.TAGVERSION }}**
-            - Fixed particles crashing on web export
+            - Added parallax backgrounds
           files: |
             build/${{ env.EXPORT_NAME }}-windows-${{ env.TAGVERSION }}.zip
             build/${{ env.EXPORT_NAME }}-linux-${{ env.TAGVERSION }}.zip
