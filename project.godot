@@ -35,6 +35,6 @@ Jump={
 , null]
 }
 
-[physics]
+[rendering]
 
-2d/run_on_separate_thread=true
+textures/vram_compression/import_etc2_astc=true

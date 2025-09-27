@@ -71,6 +71,10 @@ autostart = true
 [node name="Character" parent="." instance=ExtResource("3_rus8k")]
 position = Vector2(80, 328)
 
+[node name="Floor" type="Polygon2D" parent="."]
+color = Color(0.29803923, 0.24313726, 0.14117648, 1)
+polygon = PackedVector2Array(-152, 344, 808, 344, 808, 384, -152, 384)
+
 [connection signal="timeout" from="GameManager/Timer" to="GameManager" method="_on_timer_timeout"]
 [connection signal="timeout" from="GameManager/ScoreTimer" to="GameManager" method="_on_score_timer_timeout"]
 [connection signal="timeout" from="GameManager/ObstacleSpeedTimer" to="GameManager" method="_on_obstacle_speed_timer_timeout"]
